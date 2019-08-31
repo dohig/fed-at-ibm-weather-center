@@ -39,7 +39,6 @@ export const formatSummary = summary => {
  * @returns {number}
  */
 export const getTemperatureForScale = (value, scale) => {
-  console.log('scale: ', scale);
   switch (scale) {
     case 'C':
       return (((value - 32) * 5) / 9).toFixed(0);

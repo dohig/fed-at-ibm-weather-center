@@ -15,7 +15,6 @@ export default ({ coords }, refetch) => {
         const response = await fetch(
           `${process.env.REACT_APP_API_PROXY}https://api.darksky.net/forecast/db1d17eb3b798d4881121dee107183cc/${coords}`
         );
-        console.log('response: ', response);
         if (response.ok) {
           const data = await response.json();
           setData(data);
