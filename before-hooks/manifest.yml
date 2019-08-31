@@ -1,0 +1,5 @@
+---
+applications:
+  - name: fed-at-ibm--weather-center
+    memory: 64M
+    buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git

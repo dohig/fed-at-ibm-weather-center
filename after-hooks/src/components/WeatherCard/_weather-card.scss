@@ -1,0 +1,218 @@
+.weather-card-container {
+  height: 100%;
+
+}
+
+.weather-center__card {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, $spacing-07) minmax(0, 1fr);
+
+  // Error state card
+  &--error {
+    @include carbon--type-style('productive-heading-01');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 14rem;
+    padding: $spacing-05;
+    background: $ui-01;
+    text-align: center;
+    flex-wrap: wrap;
+
+    &:hover {
+      cursor: pointer;
+      background: $hover-ui;
+    }
+
+    &:active {
+      background: $active-ui;
+    }
+
+    &:focus {
+      outline: $focus $spacing-01 solid;
+    }
+
+    >.error__retry {
+      margin-top: $spacing-05;
+
+      svg {
+        fill: $inverse-support-01;
+        margin-right: $spacing-03;
+      }
+    }
+
+  }
+
+  &--title {
+    @include carbon--type-style('productive-heading-03');
+    flex-basis: 100%;
+    margin-bottom: $spacing-02;
+    grid-column: 1 / 3;
+  }
+
+  // Left section with details about current weather
+  &--currently {
+    position: relative;
+    padding-right: $spacing-05;
+    display: flex;
+    flex-direction: column;
+    place-content: flex-start space-between;
+
+    &::after {
+      content: '';
+      height: 100%;
+      width: 1px;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      background: $icon-02;
+    }
+
+    .currently {
+      &__time-icon-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      &__time {
+        @include carbon--type-style('label-01');
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        margin-right: $spacing-03;
+        margin-bottom: $spacing-02;
+
+        >svg {
+          fill: $icon-02;
+          margin-right: $spacing-02;
+        }
+
+        >.bx--skeleton__text {
+          width: $spacing-07;
+          margin-bottom: 0;
+        }
+      }
+
+      &__icon {
+        width: $layout-05;
+        height: $layout-05;
+
+        >svg {
+          height: $layout-05;
+          width: $layout-05;
+          fill: $ibm-color__blue-30;
+        }
+
+        >.bx--skeleton__text {
+          height: 100%;
+        }
+      }
+
+      &__next-hour {
+        display: flex;
+        flex-direction: column;
+        place-content: flex-end space-between;
+        margin-top: (-$spacing-04);
+
+        // Let's not have the margin-top when loading as it overlaps with the previous sibling at certain widths
+        &.loading {
+          margin-top: 0 !important;
+        }
+
+        &--label {
+          @include carbon--type-style('label-01');
+          color: $text-02;
+          flex: 0 0 auto;
+        }
+
+        &--temperature {
+          @include carbon--type-style('productive-heading-06');
+          flex: 1 0 auto;
+
+          >.bx--skeleton__text {
+            padding-top: $spacing-03;
+            height: $spacing-09;
+            width: 50%;
+          }
+        }
+
+        &--description {
+          @include carbon--type-style('caption-01');
+          flex: 0 0 auto;
+
+          >.bx--skeleton__text {
+            width: 50%;
+          }
+        }
+      }
+    }
+
+  }
+
+  // Right hand section with details about today's weather
+  &--daily {
+    @include carbon--type-style('label-01');
+    padding-left: $spacing-05;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .daily {
+      &__label {
+        color: $text-02;
+      }
+
+      &__summary {
+        @include carbon--type-style('productive-heading-02');
+        margin-bottom: $spacing-03;
+        word-break: break-word;
+
+        >.bx--skeleton__text:nth-of-type(1) {
+          margin-top: $spacing-02;
+        }
+
+        >.bx--skeleton__text:nth-of-type(2) {
+          width: 50%;
+        }
+      }
+
+      &__info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax($layout-05, 1fr));
+
+        &-group {
+          display: flex;
+
+          &-item {
+            flex: 0 0 50%;
+
+            &--label {
+              color: $text-02;
+            }
+
+            &--value {
+              @include carbon--type-style('productive-heading-02');
+              position: relative;
+
+              // We want a % symbol to be very small like the ° symbol
+              >span.small-percentage-symbol {
+                font-size: $spacing-03;
+                margin-left: 1px;
+              }
+
+              >.bx--skeleton__text {
+                width: 50%;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

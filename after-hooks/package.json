@@ -1,0 +1,50 @@
+{
+  "name": "fed-at-ibm-weather-center",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@carbon/grid": "^10.3.0",
+    "@carbon/icons-react": "^10.3.0",
+    "@carbon/themes": "^10.5.0",
+    "carbon-components": "^10.3.0",
+    "carbon-components-react": "^7.3.0",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.26",
+    "react": "16.8.0",
+    "react-dom": "16.8.0",
+    "react-scripts": "3.1.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "prettier": "1.18.2"
+  },
+  "scripts": {
+    "clean": "yarn cache clean && yarn install",
+    "build": "react-scripts build",
+    "deploy": "rm -rf ./build && yarn build && cf push -f manifest.yml",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "prettier": {
+    "jsxBracketSameLine": true,
+    "printWidth": 80,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}

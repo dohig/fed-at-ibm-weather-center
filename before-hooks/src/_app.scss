@@ -1,0 +1,17 @@
+// Components
+@import './components/Nav/nav.scss';
+@import './components/WeatherCard/weather-card.scss';
+
+.bx--content {
+  background: $ui-background !important;
+  margin-bottom: $spacing-05;
+
+  *[class^="bx--col-"] {
+    padding: $spacing-03 !important;
+  }
+
+  .bx--row {
+    padding-left: $spacing-03 !important;
+    padding-right: $spacing-03 !important;
+  }
+}
