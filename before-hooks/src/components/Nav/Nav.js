@@ -23,7 +23,7 @@ class Nav extends Component {
   }
 
   toggleTemperatureScale() {
-    this.context.dispatch({ type: this.context.scale === 'C' ? 'F' : 'C' });
+    this.context.updateScale(this.context.scale === 'C' ? 'F' : 'C');
   }
 
   render() {
