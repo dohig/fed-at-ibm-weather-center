@@ -9,9 +9,8 @@ function scaleReducer(state, action) {
     case 'F':
       return action.type;
     /*
-      TODO: We could extend the app by adding a dropdown
-      so that multiple temperature scales could be selected
-      such as Kelvin
+      TODO: We could improve the app by adding a dropdown instead of a
+      toggle button so that multiple temperature scales could be selected
     case 'K':
       return action.type;
     */

@@ -3,6 +3,7 @@
 Today we’re going to work with the [hooks API](https://reactjs.org/docs/hooks-intro.html) released in [`React v16.8`](https://reactjs.org/blog/2019/02/06/react-v16.8.0). We’ll take a project built using the previous `React v16.7` release and leverage hooks to improve our code in terms of clarity, reusability and verbosity.
 
 In our refactored codebase we’ll make use of the following hooks:
+
 - [useState](https://reactjs.org/docs/hooks-reference.html#usestate)
 - [useEffect](https://reactjs.org/docs/hooks-reference.html#useeffect)
 - [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext)
@@ -24,6 +25,7 @@ INTRODUCING… the **FED@IBM Weather Center** 🌦
 A simple app built using the Carbon Design System, for showing the weather info at each of our branches.
 
 **Features include**:
+
 - Displays the current weather info for each branch
 - Displays today’s forecast for each branch
 - Allows users to toggle temperature scale based on their preference (C°/F°)
@@ -34,31 +36,31 @@ A simple app built using the Carbon Design System, for showing the weather info 
 
 The as-is application built using `React v16.7` makes use of several popular React features (below). Although popular (and still very much relevant) within React, these concepts can at times be confusing to understand and verbose in terms of the amount of code needed to implement. Hooks will allow us to refactor these concepts to be clearer to read and easier understand.
 
-| Feature                                                                 | `v16.7`: Before hooks                   | `v16.8`: After hooks                                                            |
-| ----------------------------------------------------------------------- |---------------------------------------| ------------|
-| [State management](https://reactjs.org/docs/state-and-lifecycle)        | `this.state`, `this.setState()`         | [useState](https://reactjs.org/docs/hooks-reference.html#usestate)     |
-| [Lifecycle methods](https://reactjs.org/docs/glossary#lifecycle-methods)| componentDidMount, componentDidUpdate   | [useEffect](https://reactjs.org/docs/hooks-reference.html#useeffect)   |
-| [Context API consumption](https://reactjs.org/docs/context)             | `Component.contextType`, `this.context` | [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext) |
-| [Render prop components](https://reactjs.org/docs/render-props)         | See below                               | [Custom hook](https://reactjs.org/docs/hooks-custom.html)                      |
-   ```
-   // Render prop component
-   <GetUser>
-   {
-    ({ user, loading }) => loading ? 'Loading user...' : `Hello ${user.name}!`
-   }
-   </GetUser>
-   ```
+| Feature                                                                  | `v16.7`: Before hooks                   | `v16.8`: After hooks                                                   |
+| ------------------------------------------------------------------------ | --------------------------------------- | ---------------------------------------------------------------------- |
+| [State management](https://reactjs.org/docs/state-and-lifecycle)         | `this.state`, `this.setState()`         | [useState](https://reactjs.org/docs/hooks-reference.html#usestate)     |
+| [Lifecycle methods](https://reactjs.org/docs/glossary#lifecycle-methods) | componentDidMount, componentDidUpdate   | [useEffect](https://reactjs.org/docs/hooks-reference.html#useeffect)   |
+| [Context API consumption](https://reactjs.org/docs/context)              | `Component.contextType`, `this.context` | [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext) |
+| [Render prop components](https://reactjs.org/docs/render-props)          | See below                               | [Custom hook](https://reactjs.org/docs/hooks-custom.html)              |
+
+```
+// Render prop component
+<GetUser>
+{
+ ({ user, loading }) => loading ? 'Loading user...' : `Hello ${user.name}!`
+}
+</GetUser>
+```
 
 ## Fork and Clone
 
 This GitHub repository contains the code that we will be refactoring in today's workshop. At the root directory, you'll see 2 folders: `before-hooks` and `after-hooks`.
 
-We will be working out of `before-hooks`, you can use `after-hooks` is what our finished code should _roughly_ look like. So you can use it for reference if need be. 
+We will be working out of `before-hooks`, you can use `after-hooks` is what our finished code should _roughly_ look like. So you can use it for reference if need be.
 
 ### Fork
 
 To begin, fork this repo to your GitHub account.
-
 
 ### Clone
 

@@ -19,17 +19,17 @@ class WeatherApi extends Component {
       const response = await fetch(
         `${process.env.REACT_APP_API_PROXY}https://api.darksky.net/forecast/db1d17eb3b798d4881121dee107183cc/${this.props.location.coords}`
       );
-      if (response.ok) {
-        const data = await response.json();
-        this.setState({ data });
-      } else {
-        this.setState({ error: true });
-      }
+      // if (response.ok) {
+      const data = await response.json();
+      this.setState({ data });
+      // } else {
+      //   this.setState({ error: true });
+      // }
     } catch (error) {
       this.setState({ error: true });
     }
 
-    this.setState({ loading: true });
+    this.setState({ loading: false });
   }
 
   componentDidMount() {

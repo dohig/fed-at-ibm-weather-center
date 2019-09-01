@@ -28,7 +28,7 @@ class Nav extends Component {
 
   render() {
     return (
-      <Header aria-label="FED@IBM Dublin | React Hooks">
+      <Header aria-label="FED@IBM Dublin">
         <HeaderName href="#" prefix="FED@IBM">
           Dublin
         </HeaderName>

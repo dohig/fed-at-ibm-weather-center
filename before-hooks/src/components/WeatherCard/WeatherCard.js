@@ -10,7 +10,7 @@ import {
 } from '../../util/weeHelpers';
 
 // Our WeatherApi render prop component
-import WeatherApi from '../WeatherApi/WeatherApi';
+import WeatherApi from '../WeatherApi';
 
 // Our context for temperature scale
 import { TemperatureScaleContext } from '../../context/TemperatureScaleContext';
