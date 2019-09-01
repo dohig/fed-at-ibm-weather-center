@@ -14,8 +14,6 @@ Although this isn’t the full range of hooks released in `v16.8`, hopefully you
 
 From a UI perspective we’ll see no change in how our app looks "before hooks" and "after hooks". However our codebase and developer experience will certainly improve as a result. Perhaps not noticably on a project this size but at scale, with bigger products, larger development teams and quicker release cycles (as we experience at IBM) - the cleaner, clearer, and more reusable nature of hooks can have a real benefits day-to-day.
 
-**Let's get started!**
-
 ## Outline
 
 Did you know there are now 13 FED@IBM Branches?! And they’re spread right across the globe - from California to India! I thought it would be cool to visualize that geographically in the application for this workshop.
@@ -121,12 +119,75 @@ After the dependencies are installed, you can start the app with:
 $ yarn start
 ```
 
+![](img/turn-it-on.gif)
+
 The app should (eventually) open up in your default browser window.
 
-Now is a good time to take a look and familiarize yourself with the codebase. Play around with it. Take a look at the [React docs](https://reactjs.org/docs/getting-started) if there's anything that you're not familiar with or need a refresher. And feel free to ask questions.
+Now is a good time to take a look and familiarize yourself with the codebase. Take a look at the [React docs](https://reactjs.org/docs/getting-started) if there's anything that you're not familiar with or need a refresher. And feel free to ask questions.
 
-## Refactor the Context
+**Let's get started!**
 
-I think a nice place to start for our refactor is our Context instance in `context/TemperatureScaleContext.js`.
+## Upgrade to React v16.8.0
 
-> This is quite low hanging fruit, as we can change the implementation here - while not affecting the consuming components, as we can mix and match implementations. Components are only concerned about themselves in terms of state, props, context etc. How they're being created up/down the tree has no effect on their consumption within other components. One of the benefits of React's backwards compatibility! This is definitely something to consider if you work on a React project that perhaps has a lot of "legacy" Class components that would benefit from refactoring to make use of hooks. Backwards compatibility allows yu to gradually make that switch.
+![](img/its-morphing-time.gif)
+
+To enter into the world of hooks, we must first update the versions of `react` and `react-dom` in `package.json` both to `16.8.0`:
+
+```json
+...
+"react": "16.8.0",
+"react-dom": "16.8.0",
+...
+```
+
+Then run:
+
+```bash
+$ yarn && yarn start
+```
+
+And double check the app is still running!
+
+## Refactor our Context.Provider
+
+I think a good place to start for our refactor is our Context.Provider class in `context/TemperatureScaleContext.js`.
+
+> This is a nice low hanging fruit, as we can change the implementation here - while not affecting the consuming components, as React allows us to mix and match implementations. Components are only concerned about themselves in terms of state, props, context etc. How they're being created up/down the tree has no effect on their consumption within other components. One of the benefits of React's backwards compatibility! This is definitely something to consider if you work on a React project that perhaps has a lot of "legacy" Class components that would benefit from refactoring to make use of hooks. Backwards compatibility allows your team to gradually make that switch.
+
+We don't actually need to change are instantiation of our Context object. This is still how context is created.
+
+```javascript
+const TemperatureScaleContext = createContext();
+```
+
+We can however start by converting `TemperatureScaleProvider` from a Class component to a Function component.
+
+```javascript
+const TemperatureScaleProvider = ({ children }) => {
+  ...
+};
+```
+
+Next we can replace the `state` object that is used for instantiating state in Class components. Using the `useState` hook we can create our local Functional component state with the original default state of `'C'`, at the same time receiving it's mutation function that components consuming this state (as context) will call when updating the state anywhere within the app:
+
+```javascript
+const [scale, setScale] = useState("C");
+```
+
+The contents of the render method can be moved up into the main Functional component and references made to `this` can be removed as so:
+
+```javascript
+...
+const value = {
+  scale: scale,
+  updateScale: setScale,
+};
+
+return (
+  <TemperatureScaleContext.Provider value={value}>
+    {children}
+  </TemperatureScaleContext.Provider>
+);
+```
+
+The app should be back to running normally and the toggle functionality should be working as it was previously.
