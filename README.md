@@ -16,6 +16,7 @@ From a UI perspective we’ll see no change in how our app looks "before hooks" 
 **Let's get started!**
 
 ## Outline
+
 Did you know there are now 13 FED@IBM Branches?! And they’re spread right across the globe - from California to India! I thought it would be cool to visualize that geographically in the application for this workshop.
 
 INTRODUCING… the **FED@IBM Weather Center** 🌦
@@ -30,6 +31,7 @@ A simple app built using the Carbon Design System, for showing the weather info 
 [Open application](http://fed-at-ibm-weather-center.mybluemix.net/) 💻
 
 ### Code: As-is vs To-be
+
 The as-is application built using `React v16.7` makes use of several popular React features (below). Although popular (and still very much relevant) within React, these concepts can at times be confusing to understand and verbose in terms of the amount of code needed to implement. Hooks will allow us to refactor these concepts to be clearer to read and easier understand.
 
 | Feature                                                                 | `v16.7`: Before hooks                   | `v16.8`: After hooks                                                            |
@@ -46,3 +48,52 @@ The as-is application built using `React v16.7` makes use of several popular Rea
    }
    </GetUser>
    ```
+
+## Fork and Clone
+
+This GitHub repository contains the code that we will be refactoring in today's workshop. At the root directory, you'll see 2 folders: `before-hooks` and `after-hooks`.
+
+We will be working out of `before-hooks`, you can use `after-hooks` is what our finished code should _roughly_ look like. So you can use it for reference if need be. 
+
+### Fork
+
+To begin, fork this repo to your GitHub account.
+
+
+### Clone
+
+Go to your forked repository, copy the SSH or HTTPS URL and in your terminal run the two commands to get the repository in your local file system and enter that directory.
+
+```bash
+$ git clone [your fork SSH/HTTPS]
+$ cd fed-at-ibm-weather-center
+```
+
+### Add upstream remote
+
+Add a remote called `upstream` so we can eventually submit a pull request once you have completed this tutorial step.
+
+```bash
+$ git remote add upstream git@github.com:ShayMurnin/fed-at-ibm-weather-center.git
+```
+
+Or, if you prefer to use HTTPS instead of SSH with your remotes:
+
+```bash
+$ git remote add https://github.com/ShayMurnin/fed-at-ibm-weather-center.git
+```
+
+Verify that your forked repository remotes are correct:
+
+```bash
+$ git remote -v
+```
+
+Your terminal should output something like this:
+
+```bash
+origin	[your forked repo] (fetch)
+origin	[your forked repo] (push)
+upstream	git@github.com:ShayMurnin/fed-at-ibm-weather-center.git (fetch)
+upstream	git@github.com:ShayMurnin/fed-at-ibm-weather-center.git (push)
+```
