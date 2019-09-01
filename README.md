@@ -32,12 +32,12 @@ A simple app built using the Carbon Design System, for showing the weather info 
 ### Code: As-is vs To-be
 The as-is application built using `React v16.7` makes use of several popular React features (below). Although popular (and still very much relevant) within React, these concepts can at times be confusing to understand and verbose in terms of the amount of code needed to implement. Hooks will allow us to refactor these concepts to be clearer to read and easier understand.
 
-| Feature                                                                 | Before hooks                          | After hooks  |
+| Feature                                                                 | `v16.7`: Before hooks                   | `v16.8`: After hooks                                                            |
 | ----------------------------------------------------------------------- |---------------------------------------| ------------|
 | [State management](https://reactjs.org/docs/state-and-lifecycle)        | `this.state`, `this.setState()`         | [useState](https://reactjs.org/docs/hooks-reference.html#usestate)     |
 | [Lifecycle methods](https://reactjs.org/docs/glossary#lifecycle-methods)| componentDidMount, componentDidUpdate   | [useEffect](https://reactjs.org/docs/hooks-reference.html#useeffect)   |
 | [Context API consumption](https://reactjs.org/docs/context)             | `Component.contextType`, `this.context` | [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext) |
-| [Render prop components](https://reactjs.org/docs/render-props)         | See below                               | [Custom hook](https://reactjs.org/docs/hooks-custom.html)                     |
+| [Render prop components](https://reactjs.org/docs/render-props)         | See below                               | [Custom hook](https://reactjs.org/docs/hooks-custom.html)                      |
    ```
    // Render prop component
    <GetUser>
