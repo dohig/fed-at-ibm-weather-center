@@ -1,8 +1,8 @@
 ### Welcome to this FED@IBM workshop!
 
-Today we’re going to work with the [hooks API](https://reactjs.org/docs/hooks-intro.html) released in [React v16.8](https://reactjs.org/blog/2019/02/06/react-v16.8.0). We’ll take a project built using the previous `React v16.7` release and leverage hooks to improve our code in terms of clarity, reusability and verbosity.
+Today we’re going to work with the [hooks API](https://reactjs.org/docs/hooks-intro.html) released in [`React v16.8`](https://reactjs.org/blog/2019/02/06/react-v16.8.0). We’ll take a project built using the previous `React v16.7` release and leverage hooks to improve our code in terms of clarity, reusability and verbosity.
 
-In our converted codebase we’ll make use of the following hooks:
+In our refactored codebase we’ll make use of the following hooks:
 - [useState](https://reactjs.org/docs/hooks-reference.html#usestate)
 - [useEffect](https://reactjs.org/docs/hooks-reference.html#useeffect)
 - [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext)
@@ -11,7 +11,9 @@ In our converted codebase we’ll make use of the following hooks:
 
 Although this isn’t the full range of hooks released in `v16.8`, hopefully you can take enough away from today to use in your existing and future projects built with React - and the rest you can explore for yourself!
 
-From a UI perspective we’ll see no change in how our app looks "before hooks" and "after hooks". However our codebase and developer experience will certainly improve as a result. Perhaps not noticably on a project this size but at scale, with bigger products, larger development teams and quicker release cycles - the cleaner, clearer, and more reusable nature of hooks can have a real benefits day-to-day.
+From a UI perspective we’ll see no change in how our app looks "before hooks" and "after hooks". However our codebase and developer experience will certainly improve as a result. Perhaps not noticably on a project this size but at scale, with bigger products, larger development teams and quicker release cycles (as we experience at IBM) - the cleaner, clearer, and more reusable nature of hooks can have a real benefits day-to-day.
+
+**Let's get started!**
 
 ## Outline
 Did you know there are now 13 FED@IBM Branches?! And they’re spread right across the globe - from California to India! I thought it would be cool to visualize that geographically in the application for this workshop.
@@ -44,5 +46,3 @@ The as-is application built using `React v16.7` makes use of several popular Rea
    }
    </GetUser>
    ```
-
-**Let's get started!**
