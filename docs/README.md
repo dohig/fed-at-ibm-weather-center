@@ -14,6 +14,8 @@ Although this isn’t the full range of hooks released in `v16.8`, hopefully you
 
 From a UI perspective we’ll see no change in how our app looks "before hooks" and "after hooks". However our codebase and developer experience will certainly improve as a result. Perhaps not noticably on a project this size but at scale, with bigger products, larger development teams and quicker release cycles (as we experience at IBM) - the cleaner, clearer, and more reusable nature of hooks can have a real benefits day-to-day.
 
+---
+
 ## Outline
 
 Did you know there are now 13 FED@IBM Branches?! And they’re spread right across the globe - from California to India! I thought it would be cool to visualize that geographically in the application for this workshop.
@@ -49,6 +51,8 @@ The as-is application built using `React v16.7` makes use of several popular Rea
 }
 </GetUser>
 ```
+
+---
 
 ## Fork and clone
 
@@ -99,6 +103,8 @@ upstream	git@github.com:ShayMurnin/fed-at-ibm-weather-center.git (fetch)
 upstream	git@github.com:ShayMurnin/fed-at-ibm-weather-center.git (push)
 ```
 
+---
+
 ## Build and start
 
 We've got the repository forked to your GitHub account, cloned down to your machine. Let's get the app up and running! Navigate into the `before-hooks` folder with:
@@ -127,6 +133,8 @@ Now is a good time to take a look and familiarize yourself with the codebase. Ta
 
 **Let's get started!**
 
+---
+
 ## Upgrade to React v16.8.0
 
 ![](img/its-morphing-time.gif)
@@ -147,6 +155,8 @@ $ yarn && yarn start
 ```
 
 And double check the app is still running!
+
+---
 
 ## Refactor our Context.Provider
 
@@ -191,3 +201,5 @@ return (
 ```
 
 The app should be back to running normally and the toggle functionality should be working as it was previously.
+
+---

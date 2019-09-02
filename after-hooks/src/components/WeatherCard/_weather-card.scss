@@ -198,6 +198,7 @@
             &--value {
               @include carbon--type-style('productive-heading-02');
               position: relative;
+              padding-right: $spacing-02;
 
               // We want a % symbol to be very small like the ° symbol
               >span.small-percentage-symbol {
