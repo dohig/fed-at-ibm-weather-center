@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Tile } from 'carbon-components-react/lib/components/Tile';
 import Restart16 from '@carbon/icons-react/lib/restart/16';
 import Time16 from '@carbon/icons-react/lib/time/16';
-import Cloud32 from '@carbon/icons-react/lib/cloud/32';
 import {
   getLocalTimeForTimezone,
   formatSummary,

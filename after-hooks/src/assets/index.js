@@ -2,7 +2,6 @@ import { ReactComponent as ClearDay } from './clear-day.svg';
 import { ReactComponent as ClearNight } from './clear-night.svg';
 import { ReactComponent as Cloudy } from './cloudy.svg';
 import { ReactComponent as Fog } from './fog.svg';
-import React from 'react';
 import { ReactComponent as PartlyCloudyDay } from './partly-cloudy-day.svg';
 import { ReactComponent as PartlyCloudyNight } from './partly-cloudy-night.svg';
 import { ReactComponent as Rain } from './rain.svg';
