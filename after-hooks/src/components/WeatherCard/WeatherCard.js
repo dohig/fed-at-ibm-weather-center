@@ -8,6 +8,7 @@ import {
   formatSummary,
   getTemperatureForScale,
 } from '../../util/weeHelpers';
+import { icons } from '../../assets';
 
 // Import our context for temperature scale
 import { TemperatureScaleContext } from '../../context/TemperatureScaleContext';
@@ -24,6 +25,11 @@ const WeatherCard = ({ location }) => {
 
   const getTemperature = temp => {
     return getTemperatureForScale(temp, scale);
+  };
+
+  const renderIcon = () => {
+    const Icon = icons[data.currently.icon];
+    return <Icon />;
   };
 
   const renderError = () => (
@@ -59,9 +65,7 @@ const WeatherCard = ({ location }) => {
                   {loading ? (
                     <div className="currently__icon">{loadingSkeleton}</div>
                   ) : (
-                    <div className="currently__icon">
-                      <Cloud32 />
-                    </div>
+                    <div className="currently__icon">{renderIcon()}</div>
                   )}
                 </div>
                 <div

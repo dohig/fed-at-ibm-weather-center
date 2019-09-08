@@ -8,6 +8,7 @@ import {
   formatSummary,
   getTemperatureForScale,
 } from '../../util/weeHelpers';
+import { icons } from '../../assets';
 
 // Our WeatherApi render prop component
 import WeatherApi from '../WeatherApi';
@@ -23,6 +24,11 @@ class WeatherCard extends Component {
   render() {
     const getTemperature = temp => {
       return getTemperatureForScale(temp, this.context.scale);
+    };
+
+    const renderIcon = icon => {
+      const Icon = icons[icon];
+      return <Icon />;
     };
 
     const renderError = () => (
@@ -67,7 +73,7 @@ class WeatherCard extends Component {
                           </div>
                         ) : (
                           <div className="currently__icon">
-                            <Cloud32 />
+                            {renderIcon(data.currently.icon)}
                           </div>
                         )}
                       </div>
