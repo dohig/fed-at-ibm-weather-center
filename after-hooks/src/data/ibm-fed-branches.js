@@ -21,7 +21,7 @@ export default [
   },
   {
     name: 'Cambridge, UK',
-    coords: '36.144910, -5.353250',
+    coords: '52.2053,0.1218',
   },
   {
     name: 'Chennai, India',
