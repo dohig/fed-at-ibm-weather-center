@@ -141,9 +141,9 @@ class WeatherCard extends Component {
                               {loading
                                 ? loadingSkeleton
                                 : [
-                                    data.daily.data[0].precipProbability.toFixed(
-                                      0
-                                    ),
+                                    (
+                                      data.daily.data[0].precipProbability * 100
+                                    ).toFixed(0),
                                     <span
                                       key="%"
                                       className="small-percentage-symbol">

@@ -45,7 +45,7 @@ export const getTemperatureForScale = (value, scale) => {
     case 'F':
       return value.toFixed(0);
     /* TODO: We could add a dropdown to select other scales in the future, e.g.
-      case 'kelvin':
+      case 'K':
         return ...;
     */
     default:

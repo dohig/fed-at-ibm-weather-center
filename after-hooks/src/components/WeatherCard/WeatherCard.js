@@ -17,7 +17,7 @@ import useWeatherApi from '../../hooks/useWeatherApi';
 const WeatherCard = ({ location }) => {
   // In case there's an error let's allow refetching
   const [refetch, setRefetch] = useState(false);
-  // Grab the temperature scale context to convert F° to C° if need be
+  // Grab the temperature scale context to convert °F to °C if need be
   const { scale } = useContext(TemperatureScaleContext);
   // Fetch weather data for this location
   const { data, loading, error } = useWeatherApi(location, refetch);

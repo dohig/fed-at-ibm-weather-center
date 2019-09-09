@@ -30,8 +30,7 @@ const Nav = () => {
           aria-label="toggle temperature scale from celsius to fahrenheit"
           onClick={() => toggleTemperatureScale()}>
           <span className={`toggle-temperature-scale scale-type__${scale}`}>
-            <Temperature16 />
-            {scale}°
+            <Temperature16 />°{scale}
           </span>
         </HeaderGlobalAction>
       </HeaderGlobalBar>
